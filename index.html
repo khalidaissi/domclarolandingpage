@@ -1,1 +1,1361 @@
-test
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1220" />
+    <meta name="description"
+        content="Domiclaro connects customers with trusted home service providers: cleaning, childcare, hairdresser, and more." />
+    <title>Domiclaro — Home Services, Made Simple</title>
+
+    <style>
+        :root {
+            --bg: #0b1220;
+            --panel: #111a2f;
+            --panel2: #0f1730;
+            --text: #eaf0ff;
+            --muted: #a8b3d9;
+            --line: rgba(255, 255, 255, .10);
+            --brand: #6ae4ff;
+            --brand2: #9b7bff;
+            --ok: #35d07f;
+            --warn: #ffcc66;
+            --shadow: 0 18px 60px rgba(0, 0, 0, .45);
+            --radius: 18px;
+            --radius2: 26px;
+            --max: 1120px;
+            --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font);
+            background:
+                radial-gradient(900px 550px at 10% 10%, rgba(106, 228, 255, .14), transparent 55%),
+                radial-gradient(900px 550px at 90% 20%, rgba(155, 123, 255, .12), transparent 60%),
+                radial-gradient(900px 550px at 40% 90%, rgba(53, 208, 127, .08), transparent 60%),
+                linear-gradient(180deg, #070b14 0%, var(--bg) 40%, #070b14 100%);
+            color: var(--text);
+            line-height: 1.45;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(var(--max), calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        /* Top nav */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: saturate(160%) blur(12px);
+            background: rgba(7, 11, 20, .6);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0;
+            gap: 18px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 180px;
+        }
+
+        .logo {
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            background:
+                radial-gradient(12px 12px at 30% 30%, rgba(255, 255, 255, .35), transparent 65%),
+                linear-gradient(135deg, var(--brand) 0%, var(--brand2) 55%, #ff6ad5 120%);
+            box-shadow: 0 10px 28px rgba(106, 228, 255, .16);
+            border: 1px solid rgba(255, 255, 255, .18);
+        }
+
+        .brand b {
+            font-size: 16px;
+            letter-spacing: .2px;
+        }
+
+        .brand span {
+            display: block;
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: -2px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            color: var(--muted);
+            padding: 8px 10px;
+            border-radius: 10px;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+            background: rgba(255, 255, 255, .06);
+        }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 260px;
+            justify-content: flex-end;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border-radius: 14px;
+            padding: 10px 14px;
+            border: 1px solid rgba(255, 255, 255, .14);
+            background: rgba(255, 255, 255, .06);
+            color: var(--text);
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: transform .12s ease, background .12s ease, border-color .12s ease;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            background: rgba(255, 255, 255, .10);
+            border-color: rgba(255, 255, 255, .20);
+        }
+
+        .btn:active {
+            transform: translateY(0px);
+        }
+
+        .btn.primary {
+            background: linear-gradient(135deg, var(--brand) 0%, var(--brand2) 70%);
+            border-color: rgba(255, 255, 255, .22);
+            color: #07101c;
+        }
+
+        .btn.primary:hover {
+            filter: brightness(1.05);
+        }
+
+        .btn.ghost {
+            background: transparent;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: rgba(234, 240, 255, .90);
+            border: 1px solid rgba(255, 255, 255, .14);
+            background: rgba(255, 255, 255, .06);
+            padding: 7px 10px;
+            border-radius: 999px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 99px;
+            background: var(--ok);
+            box-shadow: 0 0 0 4px rgba(53, 208, 127, .15);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 64px 0 18px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .h1 {
+            font-size: clamp(32px, 4.2vw, 54px);
+            line-height: 1.05;
+            margin: 14px 0 14px;
+            letter-spacing: -0.8px;
+        }
+
+        .lead {
+            font-size: 16px;
+            color: var(--muted);
+            max-width: 56ch;
+            margin: 0 0 22px;
+        }
+
+        .hero-card {
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: linear-gradient(180deg, rgba(17, 26, 47, .74) 0%, rgba(15, 23, 48, .55) 100%);
+            border-radius: var(--radius2);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-card::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            background: radial-gradient(400px 220px at 20% 0%, rgba(106, 228, 255, .20), transparent 60%),
+                radial-gradient(380px 240px at 90% 10%, rgba(155, 123, 255, .18), transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-card-inner {
+            position: relative;
+            padding: 18px 18px 16px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 18px 0 12px;
+        }
+
+        .micro {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 14px;
+            color: var(--muted);
+            font-size: 12px;
+            align-items: center;
+        }
+
+        .micro .check {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(53, 208, 127, .10);
+            border: 1px solid rgba(53, 208, 127, .22);
+            padding: 7px 10px;
+            border-radius: 999px;
+        }
+
+        .micro .shield {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 204, 102, .08);
+            border: 1px solid rgba(255, 204, 102, .20);
+            padding: 7px 10px;
+            border-radius: 999px;
+        }
+
+        /* Quick service search mock */
+        .search-box {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 18px;
+            border-top: 1px solid rgba(255, 255, 255, .10);
+            background: rgba(0, 0, 0, .14);
+        }
+
+        .field {
+            display: flex;
+            gap: 10px;
+        }
+
+        .input,
+        .select {
+            width: 100%;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, .14);
+            background: rgba(255, 255, 255, .06);
+            padding: 12px 12px;
+            color: var(--text);
+            outline: none;
+            font-size: 14px;
+        }
+
+        .input::placeholder {
+            color: rgba(168, 179, 217, .70);
+        }
+
+        .select {
+            appearance: none;
+        }
+
+        .hint {
+            font-size: 12px;
+            color: rgba(168, 179, 217, .85);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Right side - stats + cards */
+        .side {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .statgrid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .stat {
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: rgba(255, 255, 255, .05);
+            border-radius: var(--radius);
+            padding: 14px;
+        }
+
+        .stat b {
+            font-size: 16px;
+        }
+
+        .stat div {
+            color: var(--muted);
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .feature-card {
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .04));
+            border-radius: var(--radius2);
+            padding: 16px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255, 255, 255, .14);
+            background: rgba(255, 255, 255, .06);
+            flex: 0 0 auto;
+        }
+
+        .feature-card h3 {
+            margin: 0;
+            font-size: 14px;
+            letter-spacing: .2px;
+        }
+
+        .feature-card p {
+            margin: 6px 0 0;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* Sections */
+        section {
+            padding: 56px 0;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        .section-title h2 {
+            margin: 0;
+            font-size: 22px;
+            letter-spacing: -.2px;
+        }
+
+        .section-title p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 62ch;
+        }
+
+        .grid3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .card {
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: rgba(255, 255, 255, .05);
+            border-radius: var(--radius2);
+            padding: 18px;
+            box-shadow: 0 14px 40px rgba(0, 0, 0, .25);
+        }
+
+        .card h3 {
+            margin: 10px 0 8px;
+            font-size: 16px;
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .tag {
+            font-size: 12px;
+            color: rgba(234, 240, 255, .90);
+            padding: 7px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, .14);
+            background: rgba(255, 255, 255, .06);
+        }
+
+        /* How it works */
+        .steps {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .step {
+            display: flex;
+            gap: 12px;
+            padding: 16px;
+            border-radius: var(--radius2);
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: rgba(255, 255, 255, .05);
+        }
+
+        .num {
+            width: 36px;
+            height: 36px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            background: rgba(106, 228, 255, .10);
+            border: 1px solid rgba(106, 228, 255, .22);
+            color: rgba(234, 240, 255, .95);
+            font-weight: 800;
+            flex: 0 0 auto;
+        }
+
+        .step h4 {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .step p {
+            margin: 6px 0 0;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* Pricing */
+        .pricing {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            align-items: stretch;
+        }
+
+        .price {
+            position: relative;
+            padding: 18px;
+            border-radius: var(--radius2);
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: rgba(255, 255, 255, .05);
+            overflow: hidden;
+        }
+
+        .price.recommended {
+            background: linear-gradient(180deg, rgba(106, 228, 255, .10), rgba(155, 123, 255, .08));
+            border-color: rgba(255, 255, 255, .18);
+            box-shadow: 0 20px 70px rgba(0, 0, 0, .35);
+        }
+
+        .badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            font-size: 12px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, .18);
+            background: rgba(255, 255, 255, .08);
+        }
+
+        .price h3 {
+            margin: 0 0 6px;
+            font-size: 16px;
+        }
+
+        .price .sub {
+            color: var(--muted);
+            font-size: 13px;
+            margin: 0 0 10px;
+        }
+
+        .amount {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: -.4px;
+            margin: 10px 0 12px;
+        }
+
+        .amount small {
+            font-size: 12px;
+            color: var(--muted);
+            font-weight: 700;
+        }
+
+        .ul {
+            margin: 12px 0 16px;
+            padding: 0;
+            list-style: none;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .ul li {
+            display: flex;
+            gap: 10px;
+            padding: 8px 0;
+            border-top: 1px dashed rgba(255, 255, 255, .10);
+        }
+
+        .ul li:first-child {
+            border-top: 0;
+        }
+
+        .tick {
+            width: 18px;
+            height: 18px;
+            border-radius: 7px;
+            border: 1px solid rgba(53, 208, 127, .35);
+            background: rgba(53, 208, 127, .10);
+            display: inline-grid;
+            place-items: center;
+            color: rgba(53, 208, 127, .95);
+            flex: 0 0 auto;
+            margin-top: 1px;
+        }
+
+        /* CTA */
+        .cta {
+            border-radius: 28px;
+            border: 1px solid rgba(255, 255, 255, .14);
+            background: linear-gradient(135deg, rgba(106, 228, 255, .12), rgba(155, 123, 255, .10));
+            padding: 26px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+        }
+
+        .cta h2 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        .cta p {
+            margin: 8px 0 0;
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 60ch;
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, .10);
+            padding: 26px 0 44px;
+            color: rgba(168, 179, 217, .9);
+            font-size: 13px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 18px;
+            align-items: start;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .footer-links a {
+            color: rgba(168, 179, 217, .9);
+            padding: 6px 8px;
+            border-radius: 10px;
+        }
+
+        .footer-links a:hover {
+            background: rgba(255, 255, 255, .06);
+            color: var(--text);
+        }
+
+        /* Modal */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .60);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 100;
+        }
+
+        .modal {
+            width: min(560px, 100%);
+            border-radius: 22px;
+            border: 1px solid rgba(255, 255, 255, .16);
+            background: linear-gradient(180deg, rgba(17, 26, 47, .98), rgba(10, 16, 30, .95));
+            box-shadow: 0 22px 90px rgba(0, 0, 0, .55);
+            overflow: hidden;
+        }
+
+        .modal header {
+            padding: 16px 16px 12px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, .10);
+        }
+
+        .modal header h3 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .modal header p {
+            margin: 6px 0 0;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .close {
+            border: 1px solid rgba(255, 255, 255, .14);
+            background: rgba(255, 255, 255, .06);
+            color: var(--text);
+            border-radius: 12px;
+            padding: 8px 10px;
+            cursor: pointer;
+        }
+
+        .modal .body {
+            padding: 16px;
+            display: grid;
+            gap: 10px;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .small {
+            font-size: 12px;
+            color: rgba(168, 179, 217, .9);
+            margin-top: 2px;
+        }
+
+        .modal .actions {
+            padding: 14px 16px 16px;
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            border-top: 1px solid rgba(255, 255, 255, .10);
+            background: rgba(0, 0, 0, .10);
+        }
+
+        .toast {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 18px;
+            padding: 12px 14px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, .18);
+            background: rgba(17, 26, 47, .92);
+            box-shadow: 0 18px 60px rgba(0, 0, 0, .45);
+            color: var(--text);
+            font-size: 13px;
+            display: none;
+            z-index: 110;
+        }
+
+        /* Responsive */
+        @media (max-width: 920px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-cta {
+                min-width: auto;
+            }
+        }
+
+        @media (max-width: 780px) {
+            .grid3 {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .statgrid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                justify-content: flex-start;
+            }
+
+            .row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .nav-links {
+                display: none;
+            }
+
+            .statgrid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .btn {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAV -->
+    <div class="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a class="brand" href="#top" aria-label="Domiclaro home">
+                    <div class="logo" aria-hidden="true"></div>
+                    <div>
+                        <b>Domiclaro</b>
+                        <span>Home services marketplace</span>
+                    </div>
+                </a>
+
+                <nav class="nav-links" aria-label="Primary">
+                    <a href="#services">Services</a>
+                    <a href="#how">How it works</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#faq">FAQ</a>
+                </nav>
+
+                <div class="nav-cta">
+                    <button class="btn ghost" id="openProvider">Become a provider</button>
+                    <button class="btn primary" id="openCustomer">Find a service</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <main id="top" class="container">
+        <div class="hero">
+            <div class="hero-grid">
+                <div class="hero-card">
+                    <div class="hero-card-inner">
+                        <div class="pill" title="Launching soon">
+                            <span class="dot" aria-hidden="true"></span>
+                            Launching soon in your city
+                        </div>
+
+                        <h1 class="h1">Home services, <br />booked in minutes.</h1>
+                        <p class="lead">
+                            Domiclaro connects customers with verified local providers for cleaning, childcare,
+                            hairdresser visits, handyman help, and more — with transparent pricing and secure payments.
+                        </p>
+
+                        <div class="hero-actions">
+                            <button class="btn primary" id="ctaFind">Find a service</button>
+                            <button class="btn" id="ctaProvider">Become a provider</button>
+                            <a class="btn" href="#how">How it works</a>
+                        </div>
+
+                        <div class="micro">
+                            <div class="check">✅ Verified providers</div>
+                            <div class="check">✅ Transparent prices</div>
+                            <div class="shield">🛡️ Secure payments</div>
+                        </div>
+                    </div>
+
+                    <div class="search-box" aria-label="Quick search">
+                        <div class="field">
+                            <select class="select" id="serviceSelect" aria-label="Choose service">
+                                <option value="Cleaning">Cleaning</option>
+                                <option value="Childcare">Childcare</option>
+                                <option value="Hairdresser">Hairdresser</option>
+                                <option value="Handyman">Handyman</option>
+                                <option value="Elderly care">Elderly care</option>
+                            </select>
+                            <input class="input" id="cityInput" placeholder="City (e.g., Paris)" />
+                        </div>
+                        <div class="field">
+                            <input class="input" id="dateInput" type="date" aria-label="Preferred date" />
+                            <button class="btn primary" id="quickSearch">Search</button>
+                        </div>
+                        <div class="hint">💡 This is a demo landing page — connect your real search later.</div>
+                    </div>
+                </div>
+
+                <aside class="side" aria-label="Highlights">
+                    <div class="statgrid">
+                        <div class="stat">
+                            <b>15–30s</b>
+                            <div>average booking request</div>
+                        </div>
+                        <div class="stat">
+                            <b>Top rated</b>
+                            <div>providers & reviews</div>
+                        </div>
+                        <div class="stat">
+                            <b>Secure</b>
+                            <div>payments & receipts</div>
+                        </div>
+                        <div class="stat">
+                            <b>Support</b>
+                            <div>in-app help center</div>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="icon" aria-hidden="true">🧼</div>
+                        <div>
+                            <h3>Cleaning & housekeeping</h3>
+                            <p>One-time or recurring, with clear checklists and trusted professionals.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="icon" aria-hidden="true">👶</div>
+                        <div>
+                            <h3>Childcare & babysitting</h3>
+                            <p>Pick the right profile based on reviews, experience, and availability.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="icon" aria-hidden="true">💇</div>
+                        <div>
+                            <h3>Hairdresser at home</h3>
+                            <p>Book cuts, styling, or grooming — at your time, at your place.</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <!-- SERVICES -->
+        <section id="services">
+            <div class="section-title">
+                <div>
+                    <h2>Services for every home</h2>
+                    <p>Choose a category, see trusted providers, and book in a few taps.</p>
+                </div>
+            </div>
+
+            <div class="grid3">
+                <div class="card">
+                    <div class="icon" aria-hidden="true">🧽</div>
+                    <h3>Cleaning</h3>
+                    <p>Regular or deep cleaning, apartments, houses, move-in/out.</p>
+                    <div class="tags">
+                        <span class="tag">Weekly</span><span class="tag">Deep clean</span><span class="tag">Eco
+                            options</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="icon" aria-hidden="true">🧸</div>
+                    <h3>Child care</h3>
+                    <p>Babysitting, after-school care, occasional help for events.</p>
+                    <div class="tags">
+                        <span class="tag">Evenings</span><span class="tag">Experienced</span><span
+                            class="tag">Reviews</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="icon" aria-hidden="true">💇‍♂️</div>
+                    <h3>Hairdresser</h3>
+                    <p>Haircuts, styling, grooming, and beauty services at home.</p>
+                    <div class="tags">
+                        <span class="tag">At home</span><span class="tag">On-demand</span><span class="tag">Fixed
+                            price</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="icon" aria-hidden="true">🛠️</div>
+                    <h3>Handyman</h3>
+                    <p>Small repairs, mounting, furniture assembly, quick fixes.</p>
+                    <div class="tags">
+                        <span class="tag">Fast</span><span class="tag">Tools included</span><span
+                            class="tag">Insured</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="icon" aria-hidden="true">🧑‍⚕️</div>
+                    <h3>Elderly care</h3>
+                    <p>Daily assistance, companionship, check-ins, light support.</p>
+                    <div class="tags">
+                        <span class="tag">Companion</span><span class="tag">Daily help</span><span
+                            class="tag">Trusted</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="icon" aria-hidden="true">🚚</div>
+                    <h3>Moving help</h3>
+                    <p>Extra hands for packing, lifting, organizing, and setup.</p>
+                    <div class="tags">
+                        <span class="tag">On schedule</span><span class="tag">Careful</span><span
+                            class="tag">Transparent</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section id="how">
+            <div class="section-title">
+                <div>
+                    <h2>How Domiclaro works</h2>
+                    <p>Designed to be simple for customers and fair for providers.</p>
+                </div>
+            </div>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="num">1</div>
+                    <div>
+                        <h4>Choose a service</h4>
+                        <p>Select what you need, where, and when. Add notes or preferences.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="num">2</div>
+                    <div>
+                        <h4>Match with a provider</h4>
+                        <p>We suggest available providers based on skills, ratings, and location.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="num">3</div>
+                    <div>
+                        <h4>Secure payment</h4>
+                        <p>Pay in-app. Providers get paid after the service is completed.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="num">4</div>
+                    <div>
+                        <h4>Rate and rebook</h4>
+                        <p>Leave a review, save favorites, and book again in one tap.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING -->
+        <section id="pricing">
+            <div class="section-title">
+                <div>
+                    <h2>Simple pricing</h2>
+                    <p>Start free. Upgrade when you need more visibility and tools.</p>
+                </div>
+            </div>
+
+            <div class="pricing">
+                <div class="price">
+                    <h3>Customer</h3>
+                    <p class="sub">For booking services</p>
+                    <div class="amount">Free <small>/ forever</small></div>
+                    <ul class="ul">
+                        <li><span class="tick">✓</span>Browse providers & services</li>
+                        <li><span class="tick">✓</span>In-app booking requests</li>
+                        <li><span class="tick">✓</span>Secure payments & receipts</li>
+                    </ul>
+                    <button class="btn primary" style="width:100%" id="openCustomer2">Get started</button>
+                </div>
+
+                <div class="price recommended">
+                    <div class="badge">Most popular</div>
+                    <h3>Provider Starter</h3>
+                    <p class="sub">For individual providers</p>
+                    <div class="amount">€9 <small>/ month</small></div>
+                    <ul class="ul">
+                        <li><span class="tick">✓</span>Profile + service listing</li>
+                        <li><span class="tick">✓</span>Calendar & availability</li>
+                        <li><span class="tick">✓</span>Priority support</li>
+                    </ul>
+                    <button class="btn primary" style="width:100%" id="openProvider2">Apply</button>
+                </div>
+
+                <div class="price">
+                    <h3>Provider Pro</h3>
+                    <p class="sub">For teams & growth</p>
+                    <div class="amount">€29 <small>/ month</small></div>
+                    <ul class="ul">
+                        <li><span class="tick">✓</span>Boosted visibility</li>
+                        <li><span class="tick">✓</span>Team management</li>
+                        <li><span class="tick">✓</span>Analytics & insights</li>
+                    </ul>
+                    <button class="btn" style="width:100%" id="openProvider3">Talk to us</button>
+                </div>
+            </div>
+            <p class="small" style="margin-top:10px;">
+                * Pricing is placeholder for landing page — adjust to your final business model.
+            </p>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq">
+            <div class="section-title">
+                <div>
+                    <h2>FAQ</h2>
+                    <p>Answers to the most common questions.</p>
+                </div>
+            </div>
+
+            <div class="grid3">
+                <div class="card">
+                    <h3>How are providers verified?</h3>
+                    <p>We plan identity checks, profile validation, and review moderation to keep quality high.</p>
+                </div>
+                <div class="card">
+                    <h3>When do providers get paid?</h3>
+                    <p>After completion confirmation, the payout is released (timing depends on payment method).</p>
+                </div>
+                <div class="card">
+                    <h3>Can I cancel or reschedule?</h3>
+                    <p>Yes — policies can depend on the provider and service type. You’ll see it before booking.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section>
+            <div class="cta">
+                <div>
+                    <h2>Ready to try Domiclaro?</h2>
+                    <p>
+                        Join the waitlist to be notified at launch — or apply as a provider to be among the first in
+                        your city.
+                    </p>
+                </div>
+                <div class="cta-actions">
+                    <button class="btn primary" id="ctaWaitlist">Join waitlist</button>
+                    <button class="btn" id="ctaProviderB">Become a provider</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <div class="logo" aria-hidden="true" style="width:34px;height:34px;border-radius:12px;"></div>
+                        <div>
+                            <b>Domiclaro</b>
+                            <div class="small">Home services — connecting customers and providers.</div>
+                        </div>
+                    </div>
+                    <div class="small" style="margin-top:10px;">
+                        © <span id="year"></span> Domiclaro. All rights reserved.
+                    </div>
+                </div>
+
+                <div class="footer-links" aria-label="Footer links">
+                    <a href="#services">Services</a>
+                    <a href="#how">How it works</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#faq">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL: CUSTOMER -->
+    <div class="modal-backdrop" id="modalCustomer" role="dialog" aria-modal="true" aria-labelledby="customerTitle">
+        <div class="modal">
+            <header>
+                <div>
+                    <h3 id="customerTitle">Find a service</h3>
+                    <p>Leave your details — we’ll notify you when Domiclaro launches and help you book faster.</p>
+                </div>
+                <button class="close" data-close="modalCustomer" aria-label="Close">✕</button>
+            </header>
+
+            <div class="body">
+                <div class="row">
+                    <input class="input" id="cName" placeholder="Full name" />
+                    <input class="input" id="cEmail" placeholder="Email" type="email" />
+                </div>
+                <div class="row">
+                    <input class="input" id="cCity" placeholder="City" />
+                    <select class="select" id="cService">
+                        <option>Cleaning</option>
+                        <option>Childcare</option>
+                        <option>Hairdresser</option>
+                        <option>Handyman</option>
+                        <option>Elderly care</option>
+                    </select>
+                </div>
+                <textarea class="input" id="cNote" rows="4"
+                    placeholder="Notes (optional): preferences, timing, details..."></textarea>
+                <div class="small">We’ll only use this to contact you about Domiclaro.</div>
+            </div>
+
+            <div class="actions">
+                <button class="btn" data-close="modalCustomer">Cancel</button>
+                <button class="btn primary" id="submitCustomer">Join waitlist</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: PROVIDER -->
+    <div class="modal-backdrop" id="modalProvider" role="dialog" aria-modal="true" aria-labelledby="providerTitle">
+        <div class="modal">
+            <header>
+                <div>
+                    <h3 id="providerTitle">Become a provider</h3>
+                    <p>Apply to list your services on Domiclaro. We’ll reach out with next steps.</p>
+                </div>
+                <button class="close" data-close="modalProvider" aria-label="Close">✕</button>
+            </header>
+
+            <div class="body">
+                <div class="row">
+                    <input class="input" id="pName" placeholder="Full name" />
+                    <input class="input" id="pEmail" placeholder="Email" type="email" />
+                </div>
+                <div class="row">
+                    <input class="input" id="pCity" placeholder="City" />
+                    <select class="select" id="pService">
+                        <option>Cleaning</option>
+                        <option>Childcare</option>
+                        <option>Hairdresser</option>
+                        <option>Handyman</option>
+                        <option>Elderly care</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <input class="input" id="pPhone" placeholder="Phone (optional)" />
+                    <input class="input" id="pExperience" placeholder="Experience (e.g., 3 years)" />
+                </div>
+                <textarea class="input" id="pBio" rows="4"
+                    placeholder="Short message: your services, availability, certifications..."></textarea>
+                <div class="small">Demo form: currently it just shows a success message.</div>
+            </div>
+
+            <div class="actions">
+                <button class="btn" data-close="modalProvider">Cancel</button>
+                <button class="btn primary" id="submitProvider">Submit application</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script>
+        // Helpers
+        const $ = (id) => document.getElementById(id);
+
+        function openModal(modalId) {
+            const el = $(modalId);
+            if (!el) return;
+            el.style.display = "flex";
+            document.body.style.overflow = "hidden";
+            // focus first input for accessibility
+            const input = el.querySelector("input, select, textarea, button");
+            if (input) setTimeout(() => input.focus(), 30);
+        }
+
+        function closeModal(modalId) {
+            const el = $(modalId);
+            if (!el) return;
+            el.style.display = "none";
+            document.body.style.overflow = "";
+        }
+
+        function toast(message) {
+            const t = $("toast");
+            t.textContent = message;
+            t.style.display = "block";
+            clearTimeout(window.__toastTimer);
+            window.__toastTimer = setTimeout(() => {
+                t.style.display = "none";
+            }, 2800);
+        }
+
+        // Year
+        $("year").textContent = new Date().getFullYear();
+
+        // Open buttons
+        const openCustomer = () => openModal("modalCustomer");
+        const openProvider = () => openModal("modalProvider");
+
+        $("openCustomer").addEventListener("click", openCustomer);
+        $("openCustomer2").addEventListener("click", openCustomer);
+        $("ctaFind").addEventListener("click", openCustomer);
+        $("ctaWaitlist").addEventListener("click", openCustomer);
+
+        $("openProvider").addEventListener("click", openProvider);
+        $("openProvider2").addEventListener("click", openProvider);
+        $("openProvider3").addEventListener("click", openProvider);
+        $("ctaProvider").addEventListener("click", openProvider);
+        $("ctaProviderB").addEventListener("click", openProvider);
+
+        // Close modal buttons + click backdrop
+        document.querySelectorAll("[data-close]").forEach(btn => {
+            btn.addEventListener("click", () => closeModal(btn.getAttribute("data-close")));
+        });
+
+        ["modalCustomer", "modalProvider"].forEach(id => {
+            const el = $(id);
+            el.addEventListener("click", (e) => {
+                if (e.target === el) closeModal(id);
+            });
+        });
+
+        // Escape key to close
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                closeModal("modalCustomer");
+                closeModal("modalProvider");
+            }
+        });
+
+        // Quick search demo
+        $("quickSearch").addEventListener("click", () => {
+            const service = $("serviceSelect").value;
+            const city = $("cityInput").value.trim() || "your city";
+            toast(`Searching for ${service} in ${city} (demo)`);
+            openCustomer();
+            $("cCity").value = $("cityInput").value.trim();
+            $("cService").value = service;
+        });
+
+        // Submit demos (no backend)
+        function isValidEmail(v) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+        }
+
+        $("submitCustomer").addEventListener("click", () => {
+            const name = $("cName").value.trim();
+            const email = $("cEmail").value.trim();
+            if (!name || !isValidEmail(email)) {
+                toast("Please enter your name and a valid email.");
+                return;
+            }
+            closeModal("modalCustomer");
+            toast("✅ You're on the waitlist! (demo)");
+            // Here you'd POST to your backend / API
+            // fetch("/api/waitlist", { method:"POST", headers:{'Content-Type':'application/json'}, body: JSON.stringify({...}) })
+        });
+
+        $("submitProvider").addEventListener("click", () => {
+            const name = $("pName").value.trim();
+            const email = $("pEmail").value.trim();
+            const city = $("pCity").value.trim();
+            if (!name || !isValidEmail(email) || !city) {
+                toast("Please fill name, email, and city.");
+                return;
+            }
+            closeModal("modalProvider");
+            toast("✅ Application submitted! (demo)");
+            // Here you'd POST to your backend / API
+            // fetch("/api/providers/apply", { method:"POST", headers:{'Content-Type':'application/json'}, body: JSON.stringify({...}) })
+        });
+    </script>
+</body>
+
+</html>
