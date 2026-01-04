@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0b1220" />
     <meta name="description"
-        content="Domiclaro connects customers with trusted home service providers: cleaning, childcare, hairdresser, and more." />
-    <title>Domiclaro — Home Services, Made Simple</title>
+        content="Domiclaro — Home services made simple. We take care of customers, and help pros grow their revenue." />
+    <title>Domiclaro — Home Services, Like It Should Be</title>
 
     <style>
         :root {
@@ -60,7 +60,7 @@
             margin: 0 auto;
         }
 
-        /* Top nav */
+        /* NAV */
         .nav {
             position: sticky;
             top: 0;
@@ -82,7 +82,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            min-width: 180px;
+            min-width: 200px;
         }
 
         .logo {
@@ -91,7 +91,7 @@
             border-radius: 12px;
             background:
                 radial-gradient(12px 12px at 30% 30%, rgba(255, 255, 255, .35), transparent 65%),
-                linear-gradient(135deg, var(--brand) 0%, var(--brand2) 55%, #ff6ad5 120%);
+                linear-gradient(135deg, var(--brand) 0%, var(--brand2) 70%, #ff6ad5 130%);
             box-shadow: 0 10px 28px rgba(106, 228, 255, .16);
             border: 1px solid rgba(255, 255, 255, .18);
         }
@@ -130,10 +130,10 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            min-width: 260px;
             justify-content: flex-end;
         }
 
+        /* BUTTONS */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -144,10 +144,10 @@
             border: 1px solid rgba(255, 255, 255, .14);
             background: rgba(255, 255, 255, .06);
             color: var(--text);
-            font-weight: 600;
+            font-weight: 700;
             font-size: 14px;
             cursor: pointer;
-            transition: transform .12s ease, background .12s ease, border-color .12s ease;
+            transition: transform .12s ease, background .12s ease, border-color .12s ease, filter .12s ease;
             user-select: none;
             white-space: nowrap;
         }
@@ -196,53 +196,31 @@
             box-shadow: 0 0 0 4px rgba(53, 208, 127, .15);
         }
 
-        /* Hero */
+        /* HERO */
         .hero {
-            padding: 64px 0 18px;
+            padding: 66px 0 10px;
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1.2fr .8fr;
-            gap: 30px;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 28px;
             align-items: stretch;
         }
 
         .h1 {
-            font-size: clamp(32px, 4.2vw, 54px);
-            line-height: 1.05;
+            font-size: clamp(32px, 4.3vw, 56px);
+            line-height: 1.04;
             margin: 14px 0 14px;
-            letter-spacing: -0.8px;
+            letter-spacing: -0.9px;
         }
 
         .lead {
             font-size: 16px;
-            color: var(--muted);
-            max-width: 56ch;
+            color: rgba(234, 240, 255, .92);
+            max-width: 62ch;
             margin: 0 0 22px;
-        }
-
-        .hero-card {
-            border: 1px solid rgba(255, 255, 255, .12);
-            background: linear-gradient(180deg, rgba(17, 26, 47, .74) 0%, rgba(15, 23, 48, .55) 100%);
-            border-radius: var(--radius2);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .hero-card::before {
-            content: "";
-            position: absolute;
-            inset: -2px;
-            background: radial-gradient(400px 220px at 20% 0%, rgba(106, 228, 255, .20), transparent 60%),
-                radial-gradient(380px 240px at 90% 10%, rgba(155, 123, 255, .18), transparent 60%);
-            pointer-events: none;
-        }
-
-        .hero-card-inner {
-            position: relative;
-            padding: 18px 18px 16px;
+            text-shadow: 0 8px 26px rgba(0, 0, 0, .55);
         }
 
         .hero-actions {
@@ -257,117 +235,96 @@
             flex-wrap: wrap;
             gap: 10px;
             margin-top: 14px;
-            color: var(--muted);
+            color: rgba(234, 240, 255, .85);
             font-size: 12px;
             align-items: center;
+            text-shadow: 0 8px 22px rgba(0, 0, 0, .55);
         }
 
-        .micro .check {
+        .micro .chip {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(53, 208, 127, .10);
-            border: 1px solid rgba(53, 208, 127, .22);
             padding: 7px 10px;
             border-radius: 999px;
-        }
-
-        .micro .shield {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 204, 102, .08);
-            border: 1px solid rgba(255, 204, 102, .20);
-            padding: 7px 10px;
-            border-radius: 999px;
-        }
-
-        /* Quick service search mock */
-        .search-box {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            padding: 18px;
-            border-top: 1px solid rgba(255, 255, 255, .10);
-            background: rgba(0, 0, 0, .14);
-        }
-
-        .field {
-            display: flex;
-            gap: 10px;
-        }
-
-        .input,
-        .select {
-            width: 100%;
-            border-radius: 14px;
             border: 1px solid rgba(255, 255, 255, .14);
-            background: rgba(255, 255, 255, .06);
-            padding: 12px 12px;
-            color: var(--text);
-            outline: none;
-            font-size: 14px;
+            background: rgba(0, 0, 0, .25);
+            backdrop-filter: blur(10px);
         }
 
-        .input::placeholder {
-            color: rgba(168, 179, 217, .70);
+        .micro .secure {
+            border-color: rgba(255, 204, 102, .25);
+            background: rgba(0, 0, 0, .25);
         }
 
-        .select {
-            appearance: none;
-        }
-
-        .hint {
-            font-size: 12px;
-            color: rgba(168, 179, 217, .85);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Right side - stats + cards */
-        .side {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .statgrid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-
-        .stat {
+        .hero-card {
             border: 1px solid rgba(255, 255, 255, .12);
-            background: rgba(255, 255, 255, .05);
-            border-radius: var(--radius);
-            padding: 14px;
-        }
-
-        .stat b {
-            font-size: 16px;
-        }
-
-        .stat div {
-            color: var(--muted);
-            font-size: 12px;
-            margin-top: 4px;
-        }
-
-        .feature-card {
-            border: 1px solid rgba(255, 255, 255, .12);
-            background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .04));
             border-radius: var(--radius2);
-            padding: 16px;
-            display: flex;
-            gap: 12px;
-            align-items: flex-start;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            position: relative;
+
+            /* Background image (change later) */
+            background-image: url('https://images.unsplash.com/photo-1646980241033-cd7abda2ee88?q=80&w=1400&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
         }
 
-        .icon {
-            width: 38px;
-            height: 38px;
+        /* Dark overlay for readability */
+        .hero-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg,
+                    rgba(5, 10, 20, .78) 0%,
+                    rgba(5, 10, 20, .62) 40%,
+                    rgba(5, 10, 20, .45) 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Decorative glows on top of overlay */
+        .hero-card::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            background:
+                radial-gradient(420px 220px at 18% 0%, rgba(106, 228, 255, .20), transparent 60%),
+                radial-gradient(420px 260px at 92% 10%, rgba(155, 123, 255, .18), transparent 60%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-card-inner {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+
+        /* Trust row */
+        .trust {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .trust .t {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            padding: 12px 12px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, .14);
+            background: rgba(0, 0, 0, .22);
+            backdrop-filter: blur(10px);
+            font-size: 13px;
+            color: rgba(234, 240, 255, .92);
+        }
+
+        .badgeIcon {
+            width: 34px;
+            height: 34px;
             border-radius: 14px;
             display: grid;
             place-items: center;
@@ -376,16 +333,92 @@
             flex: 0 0 auto;
         }
 
-        .feature-card h3 {
-            margin: 0;
-            font-size: 14px;
-            letter-spacing: .2px;
+        /* Right side: switcher */
+        .panel {
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: rgba(255, 255, 255, .05);
+            border-radius: var(--radius2);
+            box-shadow: 0 18px 55px rgba(0, 0, 0, .30);
+            overflow: hidden;
+            position: relative;
         }
 
-        .feature-card p {
-            margin: 6px 0 0;
+        .tabs {
+            display: flex;
+            gap: 6px;
+            padding: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, .10);
+            background: rgba(0, 0, 0, .14);
+        }
+
+        .tab {
+            flex: 1 1 auto;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: rgba(255, 255, 255, .05);
+            color: rgba(234, 240, 255, .88);
+            padding: 10px 10px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: transform .12s ease, background .12s ease;
+        }
+
+        .tab:hover {
+            transform: translateY(-1px);
+            background: rgba(255, 255, 255, .08);
+        }
+
+        .tab.active {
+            background: linear-gradient(135deg, rgba(106, 228, 255, .16), rgba(155, 123, 255, .12));
+            border-color: rgba(255, 255, 255, .20);
+            color: var(--text);
+        }
+
+        .panel-body {
+            padding: 16px;
+            display: grid;
+            gap: 12px;
+        }
+
+        .mini {
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: rgba(255, 255, 255, .04);
+            border-radius: 18px;
+            padding: 14px;
+        }
+
+        .mini h3 {
+            margin: 0 0 6px;
+            font-size: 14px;
+        }
+
+        .mini p {
+            margin: 0;
             color: var(--muted);
             font-size: 13px;
+        }
+
+        .kpis {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .kpi {
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: rgba(255, 255, 255, .04);
+            padding: 12px;
+        }
+
+        .kpi b {
+            font-size: 15px;
+        }
+
+        .kpi div {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 4px;
         }
 
         /* Sections */
@@ -411,7 +444,7 @@
             margin: 0;
             color: var(--muted);
             font-size: 14px;
-            max-width: 62ch;
+            max-width: 70ch;
         }
 
         .grid3 {
@@ -420,23 +453,68 @@
             gap: 14px;
         }
 
+        /* Service cards with background images */
         .card {
             border: 1px solid rgba(255, 255, 255, .12);
-            background: rgba(255, 255, 255, .05);
             border-radius: var(--radius2);
             padding: 18px;
             box-shadow: 0 14px 40px rgba(0, 0, 0, .25);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: var(--card-bg, linear-gradient(135deg, rgba(106, 228, 255, .16), rgba(155, 123, 255, .12)));
+            background-size: cover;
+            background-position: center;
+            filter: saturate(1.05);
+            transform: scale(1.03);
+            z-index: 0;
+        }
+
+        .card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, .05) 0%, rgba(0, 0, 0, .58) 65%, rgba(0, 0, 0, .70) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 16px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255, 255, 255, .14);
+            background: rgba(0, 0, 0, .22);
+            backdrop-filter: blur(10px);
         }
 
         .card h3 {
-            margin: 10px 0 8px;
+            margin: 12px 0 8px;
             font-size: 16px;
+            text-shadow: 0 10px 26px rgba(0, 0, 0, .55);
         }
 
         .card p {
             margin: 0;
-            color: var(--muted);
+            color: rgba(234, 240, 255, .88);
             font-size: 14px;
+            text-shadow: 0 10px 22px rgba(0, 0, 0, .55);
         }
 
         .tags {
@@ -448,11 +526,12 @@
 
         .tag {
             font-size: 12px;
-            color: rgba(234, 240, 255, .90);
+            color: rgba(234, 240, 255, .92);
             padding: 7px 10px;
             border-radius: 999px;
             border: 1px solid rgba(255, 255, 255, .14);
-            background: rgba(255, 255, 255, .06);
+            background: rgba(0, 0, 0, .22);
+            backdrop-filter: blur(10px);
         }
 
         /* How it works */
@@ -480,7 +559,7 @@
             background: rgba(106, 228, 255, .10);
             border: 1px solid rgba(106, 228, 255, .22);
             color: rgba(234, 240, 255, .95);
-            font-weight: 800;
+            font-weight: 900;
             flex: 0 0 auto;
         }
 
@@ -495,94 +574,34 @@
             font-size: 13px;
         }
 
-        /* Pricing */
-        .pricing {
+        /* Testimonials */
+        .quotes {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 14px;
-            align-items: stretch;
         }
 
-        .price {
-            position: relative;
-            padding: 18px;
+        blockquote {
+            margin: 0;
             border-radius: var(--radius2);
             border: 1px solid rgba(255, 255, 255, .12);
             background: rgba(255, 255, 255, .05);
-            overflow: hidden;
+            padding: 18px;
+            box-shadow: 0 14px 40px rgba(0, 0, 0, .22);
         }
 
-        .price.recommended {
-            background: linear-gradient(180deg, rgba(106, 228, 255, .10), rgba(155, 123, 255, .08));
-            border-color: rgba(255, 255, 255, .18);
-            box-shadow: 0 20px 70px rgba(0, 0, 0, .35);
+        blockquote p {
+            margin: 0;
+            color: rgba(234, 240, 255, .92);
+            font-size: 14px;
         }
 
-        .badge {
-            position: absolute;
-            top: 14px;
-            right: 14px;
-            font-size: 12px;
-            padding: 6px 10px;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, .18);
-            background: rgba(255, 255, 255, .08);
-        }
-
-        .price h3 {
-            margin: 0 0 6px;
-            font-size: 16px;
-        }
-
-        .price .sub {
+        blockquote footer {
+            margin-top: 10px;
             color: var(--muted);
-            font-size: 13px;
-            margin: 0 0 10px;
-        }
-
-        .amount {
-            font-size: 28px;
-            font-weight: 900;
-            letter-spacing: -.4px;
-            margin: 10px 0 12px;
-        }
-
-        .amount small {
             font-size: 12px;
-            color: var(--muted);
-            font-weight: 700;
-        }
-
-        .ul {
-            margin: 12px 0 16px;
+            border: 0;
             padding: 0;
-            list-style: none;
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-        .ul li {
-            display: flex;
-            gap: 10px;
-            padding: 8px 0;
-            border-top: 1px dashed rgba(255, 255, 255, .10);
-        }
-
-        .ul li:first-child {
-            border-top: 0;
-        }
-
-        .tick {
-            width: 18px;
-            height: 18px;
-            border-radius: 7px;
-            border: 1px solid rgba(53, 208, 127, .35);
-            background: rgba(53, 208, 127, .10);
-            display: inline-grid;
-            place-items: center;
-            color: rgba(53, 208, 127, .95);
-            flex: 0 0 auto;
-            margin-top: 1px;
         }
 
         /* CTA */
@@ -607,7 +626,7 @@
             margin: 8px 0 0;
             color: var(--muted);
             font-size: 14px;
-            max-width: 60ch;
+            max-width: 64ch;
         }
 
         .cta-actions {
@@ -663,7 +682,7 @@
         }
 
         .modal {
-            width: min(560px, 100%);
+            width: min(580px, 100%);
             border-radius: 22px;
             border: 1px solid rgba(255, 255, 255, .16);
             background: linear-gradient(180deg, rgba(17, 26, 47, .98), rgba(10, 16, 30, .95));
@@ -712,6 +731,34 @@
             gap: 10px;
         }
 
+        .input,
+        .select,
+        textarea.input {
+            width: 100%;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, .14);
+            background: rgba(255, 255, 255, .06);
+            padding: 12px 12px;
+            color: var(--text);
+            outline: none;
+            font-size: 14px;
+            font-family: var(--font);
+            resize: vertical;
+            min-height: 44px;
+        }
+
+        textarea.input {
+            min-height: 96px;
+        }
+
+        .input::placeholder {
+            color: rgba(168, 179, 217, .70);
+        }
+
+        .select {
+            appearance: none;
+        }
+
         .small {
             font-size: 12px;
             color: rgba(168, 179, 217, .9);
@@ -749,10 +796,6 @@
             .hero-grid {
                 grid-template-columns: 1fr;
             }
-
-            .nav-cta {
-                min-width: auto;
-            }
         }
 
         @media (max-width: 780px) {
@@ -760,16 +803,12 @@
                 grid-template-columns: 1fr;
             }
 
-            .pricing {
-                grid-template-columns: 1fr;
-            }
-
             .steps {
                 grid-template-columns: 1fr;
             }
 
-            .statgrid {
-                grid-template-columns: 1fr 1fr;
+            .quotes {
+                grid-template-columns: 1fr;
             }
 
             .footer-grid {
@@ -783,6 +822,10 @@
             .row {
                 grid-template-columns: 1fr;
             }
+
+            .kpis {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         @media (max-width: 520px) {
@@ -790,15 +833,8 @@
                 display: none;
             }
 
-            .statgrid {
+            .kpis {
                 grid-template-columns: 1fr;
-            }
-        }
-
-        /* Reduced motion */
-        @media (prefers-reduced-motion: reduce) {
-            .btn {
-                transition: none;
             }
         }
     </style>
@@ -818,15 +854,16 @@
                 </a>
 
                 <nav class="nav-links" aria-label="Primary">
+                    <a href="#promise">Why Domiclaro</a>
                     <a href="#services">Services</a>
                     <a href="#how">How it works</a>
-                    <a href="#pricing">Pricing</a>
+                    <a href="#pros">For pros</a>
                     <a href="#faq">FAQ</a>
                 </nav>
 
                 <div class="nav-cta">
-                    <button class="btn ghost" id="openProvider">Become a provider</button>
-                    <button class="btn primary" id="openCustomer">Find a service</button>
+                    <button class="btn ghost" id="openPro">I’m a pro</button>
+                    <button class="btn primary" id="openClient">Book a service</button>
                 </div>
             </div>
         </div>
@@ -836,165 +873,223 @@
     <main id="top" class="container">
         <div class="hero">
             <div class="hero-grid">
+                <!-- Left -->
                 <div class="hero-card">
                     <div class="hero-card-inner">
-                        <div class="pill" title="Launching soon">
+                        <div class="pill">
                             <span class="dot" aria-hidden="true"></span>
-                            Launching soon in your city
+                            Like Wecasa — but built for trust & simplicity
                         </div>
 
-                        <h1 class="h1">Home services, <br />booked in minutes.</h1>
+                        <h1 class="h1">Home services that feel effortless.</h1>
                         <p class="lead">
-                            Domiclaro connects customers with verified local providers for cleaning, childcare,
-                            hairdresser visits, handyman help, and more — with transparent pricing and secure payments.
+                            Domiclaro connects you with reliable local professionals for cleaning, childcare,
+                            hairdresser visits, and pet care.
+                            We handle the experience end-to-end so you can relax.
                         </p>
 
                         <div class="hero-actions">
-                            <button class="btn primary" id="ctaFind">Find a service</button>
-                            <button class="btn" id="ctaProvider">Become a provider</button>
-                            <a class="btn" href="#how">How it works</a>
+                            <button class="btn primary" id="ctaClient">Book a service</button>
+                            <button class="btn" id="ctaPro">Become a pro</button>
+                            <a class="btn" href="#promise">See our promise</a>
                         </div>
 
                         <div class="micro">
-                            <div class="check">✅ Verified providers</div>
-                            <div class="check">✅ Transparent prices</div>
-                            <div class="shield">🛡️ Secure payments</div>
+                            <div class="chip">✅ Care team support</div>
+                            <div class="chip">✅ Verified profiles</div>
+                            <div class="chip secure">🛡️ Secure payments</div>
                         </div>
-                    </div>
 
-                    <div class="search-box" aria-label="Quick search">
-                        <div class="field">
-                            <select class="select" id="serviceSelect" aria-label="Choose service">
-                                <option value="Cleaning">Cleaning</option>
-                                <option value="Childcare">Childcare</option>
-                                <option value="Hairdresser">Hairdresser</option>
-                                <option value="Handyman">Handyman</option>
-                                <option value="Elderly care">Elderly care</option>
-                            </select>
-                            <input class="input" id="cityInput" placeholder="City (e.g., Paris)" />
+                        <div class="trust" aria-label="Trust highlights">
+                            <div class="t">
+                                <div class="badgeIcon" aria-hidden="true">⭐</div>
+                                <div><b>Quality first</b>
+                                    <div class="small">Selection + reviews</div>
+                                </div>
+                            </div>
+                            <div class="t">
+                                <div class="badgeIcon" aria-hidden="true">🕒</div>
+                                <div><b>On time</b>
+                                    <div class="small">Smart scheduling</div>
+                                </div>
+                            </div>
+                            <div class="t">
+                                <div class="badgeIcon" aria-hidden="true">💬</div>
+                                <div><b>We answer</b>
+                                    <div class="small">Real human support</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="field">
-                            <input class="input" id="dateInput" type="date" aria-label="Preferred date" />
-                            <button class="btn primary" id="quickSearch">Search</button>
-                        </div>
-                        <div class="hint">💡 This is a demo landing page — connect your real search later.</div>
                     </div>
                 </div>
 
-                <aside class="side" aria-label="Highlights">
-                    <div class="statgrid">
-                        <div class="stat">
-                            <b>15–30s</b>
-                            <div>average booking request</div>
-                        </div>
-                        <div class="stat">
-                            <b>Top rated</b>
-                            <div>providers & reviews</div>
-                        </div>
-                        <div class="stat">
-                            <b>Secure</b>
-                            <div>payments & receipts</div>
-                        </div>
-                        <div class="stat">
-                            <b>Support</b>
-                            <div>in-app help center</div>
-                        </div>
+                <!-- Right -->
+                <aside class="panel" aria-label="Customer and pro benefits">
+                    <div class="tabs">
+                        <button class="tab active" id="tabClient" type="button">For clients</button>
+                        <button class="tab" id="tabPro" type="button">For pros</button>
                     </div>
 
-                    <div class="feature-card">
-                        <div class="icon" aria-hidden="true">🧼</div>
-                        <div>
-                            <h3>Cleaning & housekeeping</h3>
-                            <p>One-time or recurring, with clear checklists and trusted professionals.</p>
+                    <div class="panel-body" id="panelClient">
+                        <div class="mini">
+                            <h3>We take care of everything</h3>
+                            <p>From matching and scheduling to support — Domiclaro makes home services smooth and
+                                dependable.</p>
                         </div>
+
+                        <div class="kpis">
+                            <div class="kpi"><b>Trusted matches</b>
+                                <div>Relevant profiles, real reviews</div>
+                            </div>
+                            <div class="kpi"><b>Easy rebooking</b>
+                                <div>Save favorites & repeat</div>
+                            </div>
+                            <div class="kpi"><b>Support</b>
+                                <div>Help when you need it</div>
+                            </div>
+                            <div class="kpi"><b>Secure</b>
+                                <div>Payments & receipts</div>
+                            </div>
+                        </div>
+
+                        <div class="mini">
+                            <h3>Confidence at home</h3>
+                            <p>Clear service details, transparent communication, and a care team ready to help.</p>
+                        </div>
+
+                        <button class="btn primary" id="openClient2" style="width:100%;">Book a service</button>
                     </div>
 
-                    <div class="feature-card">
-                        <div class="icon" aria-hidden="true">👶</div>
-                        <div>
-                            <h3>Childcare & babysitting</h3>
-                            <p>Pick the right profile based on reviews, experience, and availability.</p>
+                    <div class="panel-body" id="panelPro" style="display:none;">
+                        <div class="mini">
+                            <h3>Grow your revenue with us</h3>
+                            <p>We help you get new clients, reduce admin work, and keep your calendar filled — you focus
+                                on the service.</p>
                         </div>
-                    </div>
 
-                    <div class="feature-card">
-                        <div class="icon" aria-hidden="true">💇</div>
-                        <div>
-                            <h3>Hairdresser at home</h3>
-                            <p>Book cuts, styling, or grooming — at your time, at your place.</p>
+                        <div class="kpis">
+                            <div class="kpi"><b>More requests</b>
+                                <div>Visibility to new clients</div>
+                            </div>
+                            <div class="kpi"><b>Less admin</b>
+                                <div>Scheduling & reminders</div>
+                            </div>
+                            <div class="kpi"><b>Fast payouts</b>
+                                <div>After service completion</div>
+                            </div>
+                            <div class="kpi"><b>Support</b>
+                                <div>We back you up</div>
+                            </div>
                         </div>
+
+                        <div class="mini">
+                            <h3>Built for professionals</h3>
+                            <p>Availability tools, client messaging, and a simple workflow that respects your time.</p>
+                        </div>
+
+                        <button class="btn primary" id="openPro2" style="width:100%;">Apply as a pro</button>
                     </div>
                 </aside>
             </div>
         </div>
 
-        <!-- SERVICES -->
-        <section id="services">
+        <!-- PROMISE -->
+        <section id="promise">
             <div class="section-title">
                 <div>
-                    <h2>Services for every home</h2>
-                    <p>Choose a category, see trusted providers, and book in a few taps.</p>
+                    <h2>Domiclaro’s promise</h2>
+                    <p>We’re building a marketplace that feels premium for clients and fair for professionals.</p>
                 </div>
             </div>
 
             <div class="grid3">
-                <div class="card">
-                    <div class="icon" aria-hidden="true">🧽</div>
-                    <h3>Cleaning</h3>
-                    <p>Regular or deep cleaning, apartments, houses, move-in/out.</p>
-                    <div class="tags">
-                        <span class="tag">Weekly</span><span class="tag">Deep clean</span><span class="tag">Eco
-                            options</span>
+                <div class="card" style="min-height:auto; background: rgba(255,255,255,.05);">
+                    <div class="card-content">
+                        <div class="icon" aria-hidden="true">🧠</div>
+                        <h3>Smart matching</h3>
+                        <p>We suggest the right pro for the job based on location, skills, and availability.</p>
+                        <div class="tags"><span class="tag">Relevant</span><span class="tag">Local</span><span
+                                class="tag">Fast</span></div>
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="icon" aria-hidden="true">🧸</div>
-                    <h3>Child care</h3>
-                    <p>Babysitting, after-school care, occasional help for events.</p>
-                    <div class="tags">
-                        <span class="tag">Evenings</span><span class="tag">Experienced</span><span
-                            class="tag">Reviews</span>
+                <div class="card" style="min-height:auto; background: rgba(255,255,255,.05);">
+                    <div class="card-content">
+                        <div class="icon" aria-hidden="true">🛡️</div>
+                        <h3>Safety & trust</h3>
+                        <p>Verified profiles, reviews, and a care team that follows up if anything isn’t right.</p>
+                        <div class="tags"><span class="tag">Verified</span><span class="tag">Support</span><span
+                                class="tag">Reviews</span></div>
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="icon" aria-hidden="true">💇‍♂️</div>
-                    <h3>Hairdresser</h3>
-                    <p>Haircuts, styling, grooming, and beauty services at home.</p>
-                    <div class="tags">
-                        <span class="tag">At home</span><span class="tag">On-demand</span><span class="tag">Fixed
-                            price</span>
+                <div class="card" style="min-height:auto; background: rgba(255,255,255,.05);">
+                    <div class="card-content">
+                        <div class="icon" aria-hidden="true">✨</div>
+                        <h3>Quality experience</h3>
+                        <p>Easy booking, reminders, and smooth communication — everything in one place.</p>
+                        <div class="tags"><span class="tag">Simple</span><span class="tag">Reliable</span><span
+                                class="tag">Delightful</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="services">
+            <div class="section-title">
+                <div>
+                    <h2>Services you can book at home</h2>
+                    <p>Choose a category and we’ll connect you with a nearby professional.</p>
+                </div>
+            </div>
+
+            <div class="grid3">
+                <!-- Cleaning -->
+                <div class="card"
+                    style="--card-bg:url('https://images.unsplash.com/photo-1646980241033-cd7abda2ee88?q=80&w=1400&auto=format&fit=crop');">
+                    <div class="card-content">
+                        <div class="icon" aria-hidden="true">🧼</div>
+                        <h3>Cleaning</h3>
+                        <p>Regular or deep cleaning, move-in/out, housekeeping routines.</p>
+                        <div class="tags"><span class="tag">Home</span><span class="tag">Recurring</span><span
+                                class="tag">Checklists</span></div>
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="icon" aria-hidden="true">🛠️</div>
-                    <h3>Handyman</h3>
-                    <p>Small repairs, mounting, furniture assembly, quick fixes.</p>
-                    <div class="tags">
-                        <span class="tag">Fast</span><span class="tag">Tools included</span><span
-                            class="tag">Insured</span>
+                <!-- Child care -->
+                <div class="card"
+                    style="--card-bg:url('https://images.unsplash.com/photo-1484665754804-74b091211472?q=80&w=1400&auto=format&fit=crop');">
+                    <div class="card-content">
+                        <div class="icon" aria-hidden="true">👶</div>
+                        <h3>Child care</h3>
+                        <p>Babysitting, after-school help, occasional care for events.</p>
+                        <div class="tags"><span class="tag">Trusted</span><span class="tag">Reviews</span><span
+                                class="tag">Flexible</span></div>
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="icon" aria-hidden="true">🧑‍⚕️</div>
-                    <h3>Elderly care</h3>
-                    <p>Daily assistance, companionship, check-ins, light support.</p>
-                    <div class="tags">
-                        <span class="tag">Companion</span><span class="tag">Daily help</span><span
-                            class="tag">Trusted</span>
+                <!-- Hairdresser (placeholder image) -->
+                <div class="card"
+                    style="--card-bg:url('https://images.unsplash.com/photo-1629397685944-7073f5589754?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                    <div class="card-content">
+                        <div class="icon" aria-hidden="true">💇</div>
+                        <h3>Hairdresser</h3>
+                        <p>Haircuts, styling, grooming, and beauty services at home.</p>
+                        <div class="tags"><span class="tag">At home</span><span class="tag">Convenient</span><span
+                                class="tag">On-demand</span></div>
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="icon" aria-hidden="true">🚚</div>
-                    <h3>Moving help</h3>
-                    <p>Extra hands for packing, lifting, organizing, and setup.</p>
-                    <div class="tags">
-                        <span class="tag">On schedule</span><span class="tag">Careful</span><span
-                            class="tag">Transparent</span>
+                <!-- Pet care (placeholder image) -->
+                <div class="card"
+                    style="--card-bg:url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=1400&auto=format&fit=crop');">
+                    <div class="card-content">
+                        <div class="icon" aria-hidden="true">🐾</div>
+                        <h3>Pet care</h3>
+                        <p>Pet sitting and walks with trusted locals who love animals.</p>
+                        <div class="tags"><span class="tag">Walks</span><span class="tag">Sitting</span><span
+                                class="tag">Peace of mind</span></div>
                     </div>
                 </div>
             </div>
@@ -1004,8 +1099,8 @@
         <section id="how">
             <div class="section-title">
                 <div>
-                    <h2>How Domiclaro works</h2>
-                    <p>Designed to be simple for customers and fair for providers.</p>
+                    <h2>How it works</h2>
+                    <p>Simple flow for clients. Simple workflow for pros.</p>
                 </div>
             </div>
 
@@ -1013,84 +1108,97 @@
                 <div class="step">
                     <div class="num">1</div>
                     <div>
-                        <h4>Choose a service</h4>
-                        <p>Select what you need, where, and when. Add notes or preferences.</p>
+                        <h4>Tell us what you need</h4>
+                        <p>Choose a service, your city, and preferred time. Add a note if needed.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="num">2</div>
                     <div>
-                        <h4>Match with a provider</h4>
-                        <p>We suggest available providers based on skills, ratings, and location.</p>
+                        <h4>Get matched</h4>
+                        <p>We connect you with an available pro that fits your request.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="num">3</div>
                     <div>
-                        <h4>Secure payment</h4>
-                        <p>Pay in-app. Providers get paid after the service is completed.</p>
+                        <h4>Service at home</h4>
+                        <p>Clear communication, reminders, and everything tracked in one place.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="num">4</div>
                     <div>
-                        <h4>Rate and rebook</h4>
-                        <p>Leave a review, save favorites, and book again in one tap.</p>
+                        <h4>Support & follow-up</h4>
+                        <p>We’re here if you need anything — and reviews help keep quality high.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- PRICING -->
-        <section id="pricing">
+        <!-- FOR PROS -->
+        <section id="pros">
             <div class="section-title">
                 <div>
-                    <h2>Simple pricing</h2>
-                    <p>Start free. Upgrade when you need more visibility and tools.</p>
+                    <h2>Built for professionals</h2>
+                    <p>Get more clients, reduce admin, and grow steadily — while keeping control of your schedule.</p>
                 </div>
             </div>
 
-            <div class="pricing">
-                <div class="price">
-                    <h3>Customer</h3>
-                    <p class="sub">For booking services</p>
-                    <div class="amount">Free <small>/ forever</small></div>
-                    <ul class="ul">
-                        <li><span class="tick">✓</span>Browse providers & services</li>
-                        <li><span class="tick">✓</span>In-app booking requests</li>
-                        <li><span class="tick">✓</span>Secure payments & receipts</li>
-                    </ul>
-                    <button class="btn primary" style="width:100%" id="openCustomer2">Get started</button>
+            <div class="grid3">
+                <div class="card" style="min-height:auto; background: rgba(255,255,255,.05);">
+                    <div class="card-content">
+                        <div class="icon" aria-hidden="true">📈</div>
+                        <h3>More demand</h3>
+                        <p>Show your profile to nearby clients actively booking home services.</p>
+                        <div class="tags"><span class="tag">Visibility</span><span class="tag">Local</span><span
+                                class="tag">Demand</span></div>
+                    </div>
                 </div>
-
-                <div class="price recommended">
-                    <div class="badge">Most popular</div>
-                    <h3>Provider Starter</h3>
-                    <p class="sub">For individual providers</p>
-                    <div class="amount">€9 <small>/ month</small></div>
-                    <ul class="ul">
-                        <li><span class="tick">✓</span>Profile + service listing</li>
-                        <li><span class="tick">✓</span>Calendar & availability</li>
-                        <li><span class="tick">✓</span>Priority support</li>
-                    </ul>
-                    <button class="btn primary" style="width:100%" id="openProvider2">Apply</button>
+                <div class="card" style="min-height:auto; background: rgba(255,255,255,.05);">
+                    <div class="card-content">
+                        <div class="icon" aria-hidden="true">🗓️</div>
+                        <h3>Less admin</h3>
+                        <p>Availability tools and reminders help you run smoothly with less effort.</p>
+                        <div class="tags"><span class="tag">Calendar</span><span class="tag">Reminders</span><span
+                                class="tag">Simple</span></div>
+                    </div>
                 </div>
-
-                <div class="price">
-                    <h3>Provider Pro</h3>
-                    <p class="sub">For teams & growth</p>
-                    <div class="amount">€29 <small>/ month</small></div>
-                    <ul class="ul">
-                        <li><span class="tick">✓</span>Boosted visibility</li>
-                        <li><span class="tick">✓</span>Team management</li>
-                        <li><span class="tick">✓</span>Analytics & insights</li>
-                    </ul>
-                    <button class="btn" style="width:100%" id="openProvider3">Talk to us</button>
+                <div class="card" style="min-height:auto; background: rgba(255,255,255,.05);">
+                    <div class="card-content">
+                        <div class="icon" aria-hidden="true">🤝</div>
+                        <h3>We back you up</h3>
+                        <p>Support for issues, clear policies, and a platform that respects professionals.</p>
+                        <div class="tags"><span class="tag">Support</span><span class="tag">Fair</span><span
+                                class="tag">Reliable</span></div>
+                    </div>
                 </div>
             </div>
-            <p class="small" style="margin-top:10px;">
-                * Pricing is placeholder for landing page — adjust to your final business model.
-            </p>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section>
+            <div class="section-title">
+                <div>
+                    <h2>What people want from a home-services app</h2>
+                    <p>Landing page copy you can later replace with real testimonials.</p>
+                </div>
+            </div>
+
+            <div class="quotes">
+                <blockquote>
+                    <p>“I just want something reliable — book, get confirmation, and the person shows up on time.”</p>
+                    <footer>— A busy customer</footer>
+                </blockquote>
+                <blockquote>
+                    <p>“If the platform brings me clients and removes the back-and-forth, that’s a big win.”</p>
+                    <footer>— A home service professional</footer>
+                </blockquote>
+                <blockquote>
+                    <p>“Support matters. When something changes last minute, I want a real solution fast.”</p>
+                    <footer>— A repeat user</footer>
+                </blockquote>
+            </div>
         </section>
 
         <!-- FAQ -->
@@ -1098,22 +1206,30 @@
             <div class="section-title">
                 <div>
                     <h2>FAQ</h2>
-                    <p>Answers to the most common questions.</p>
+                    <p>Simple answers for your landing page.</p>
                 </div>
             </div>
 
             <div class="grid3">
-                <div class="card">
-                    <h3>How are providers verified?</h3>
-                    <p>We plan identity checks, profile validation, and review moderation to keep quality high.</p>
+                <div class="card" style="min-height:auto; background: rgba(255,255,255,.05);">
+                    <div class="card-content">
+                        <h3>Do you verify professionals?</h3>
+                        <p>Yes — we plan profile verification and ongoing review moderation to keep the marketplace
+                            trustworthy.</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>When do providers get paid?</h3>
-                    <p>After completion confirmation, the payout is released (timing depends on payment method).</p>
+                <div class="card" style="min-height:auto; background: rgba(255,255,255,.05);">
+                    <div class="card-content">
+                        <h3>Who helps if something goes wrong?</h3>
+                        <p>Domiclaro’s care team is here to help clients and pros with scheduling, changes, and support
+                            requests.</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Can I cancel or reschedule?</h3>
-                    <p>Yes — policies can depend on the provider and service type. You’ll see it before booking.</p>
+                <div class="card" style="min-height:auto; background: rgba(255,255,255,.05);">
+                    <div class="card-content">
+                        <h3>Can pros control availability?</h3>
+                        <p>Absolutely — pros set their schedule, service areas, and preferences to stay in control.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1122,15 +1238,15 @@
         <section>
             <div class="cta">
                 <div>
-                    <h2>Ready to try Domiclaro?</h2>
+                    <h2>Join Domiclaro early</h2>
                     <p>
-                        Join the waitlist to be notified at launch — or apply as a provider to be among the first in
-                        your city.
+                        Clients: join the waitlist to get notified at launch.<br />
+                        Pros: apply to be among the first professionals in your city and start generating revenue.
                     </p>
                 </div>
                 <div class="cta-actions">
                     <button class="btn primary" id="ctaWaitlist">Join waitlist</button>
-                    <button class="btn" id="ctaProviderB">Become a provider</button>
+                    <button class="btn" id="ctaApplyPro">Apply as a pro</button>
                 </div>
             </div>
         </section>
@@ -1145,7 +1261,7 @@
                         <div class="logo" aria-hidden="true" style="width:34px;height:34px;border-radius:12px;"></div>
                         <div>
                             <b>Domiclaro</b>
-                            <div class="small">Home services — connecting customers and providers.</div>
+                            <div class="small">Home services — connecting clients and professionals.</div>
                         </div>
                     </div>
                     <div class="small" style="margin-top:10px;">
@@ -1154,24 +1270,25 @@
                 </div>
 
                 <div class="footer-links" aria-label="Footer links">
+                    <a href="#promise">Promise</a>
                     <a href="#services">Services</a>
                     <a href="#how">How it works</a>
-                    <a href="#pricing">Pricing</a>
+                    <a href="#pros">For pros</a>
                     <a href="#faq">FAQ</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- MODAL: CUSTOMER -->
-    <div class="modal-backdrop" id="modalCustomer" role="dialog" aria-modal="true" aria-labelledby="customerTitle">
+    <!-- MODAL: CLIENT -->
+    <div class="modal-backdrop" id="modalClient" role="dialog" aria-modal="true" aria-labelledby="clientTitle">
         <div class="modal">
             <header>
                 <div>
-                    <h3 id="customerTitle">Find a service</h3>
-                    <p>Leave your details — we’ll notify you when Domiclaro launches and help you book faster.</p>
+                    <h3 id="clientTitle">Book a service</h3>
+                    <p>Leave your details — we’ll contact you when Domiclaro launches and help you book faster.</p>
                 </div>
-                <button class="close" data-close="modalCustomer" aria-label="Close">✕</button>
+                <button class="close" data-close="modalClient" aria-label="Close">✕</button>
             </header>
 
             <div class="body">
@@ -1183,33 +1300,32 @@
                     <input class="input" id="cCity" placeholder="City" />
                     <select class="select" id="cService">
                         <option>Cleaning</option>
-                        <option>Childcare</option>
+                        <option>Child care</option>
                         <option>Hairdresser</option>
-                        <option>Handyman</option>
-                        <option>Elderly care</option>
+                        <option>Pet care</option>
                     </select>
                 </div>
                 <textarea class="input" id="cNote" rows="4"
                     placeholder="Notes (optional): preferences, timing, details..."></textarea>
-                <div class="small">We’ll only use this to contact you about Domiclaro.</div>
+                <div class="small">Demo form — this page does not send data anywhere yet.</div>
             </div>
 
             <div class="actions">
-                <button class="btn" data-close="modalCustomer">Cancel</button>
-                <button class="btn primary" id="submitCustomer">Join waitlist</button>
+                <button class="btn" data-close="modalClient">Cancel</button>
+                <button class="btn primary" id="submitClient">Join waitlist</button>
             </div>
         </div>
     </div>
 
-    <!-- MODAL: PROVIDER -->
-    <div class="modal-backdrop" id="modalProvider" role="dialog" aria-modal="true" aria-labelledby="providerTitle">
+    <!-- MODAL: PRO -->
+    <div class="modal-backdrop" id="modalPro" role="dialog" aria-modal="true" aria-labelledby="proTitle">
         <div class="modal">
             <header>
                 <div>
-                    <h3 id="providerTitle">Become a provider</h3>
-                    <p>Apply to list your services on Domiclaro. We’ll reach out with next steps.</p>
+                    <h3 id="proTitle">Apply as a professional</h3>
+                    <p>Get early access to Domiclaro and start receiving booking requests.</p>
                 </div>
-                <button class="close" data-close="modalProvider" aria-label="Close">✕</button>
+                <button class="close" data-close="modalPro" aria-label="Close">✕</button>
             </header>
 
             <div class="body">
@@ -1221,10 +1337,9 @@
                     <input class="input" id="pCity" placeholder="City" />
                     <select class="select" id="pService">
                         <option>Cleaning</option>
-                        <option>Childcare</option>
+                        <option>Child care</option>
                         <option>Hairdresser</option>
-                        <option>Handyman</option>
-                        <option>Elderly care</option>
+                        <option>Pet care</option>
                     </select>
                 </div>
                 <div class="row">
@@ -1232,13 +1347,13 @@
                     <input class="input" id="pExperience" placeholder="Experience (e.g., 3 years)" />
                 </div>
                 <textarea class="input" id="pBio" rows="4"
-                    placeholder="Short message: your services, availability, certifications..."></textarea>
-                <div class="small">Demo form: currently it just shows a success message.</div>
+                    placeholder="Your message: what you do, availability, certifications, service area..."></textarea>
+                <div class="small">Demo form — this page does not send data anywhere yet.</div>
             </div>
 
             <div class="actions">
-                <button class="btn" data-close="modalProvider">Cancel</button>
-                <button class="btn primary" id="submitProvider">Submit application</button>
+                <button class="btn" data-close="modalPro">Cancel</button>
+                <button class="btn primary" id="submitPro">Submit application</button>
             </div>
         </div>
     </div>
@@ -1246,19 +1361,29 @@
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
     <script>
-        // Helpers
         const $ = (id) => document.getElementById(id);
 
+        // Year
+        $("year").textContent = new Date().getFullYear();
+
+        // Toast
+        function toast(message) {
+            const t = $("toast");
+            t.textContent = message;
+            t.style.display = "block";
+            clearTimeout(window.__toastTimer);
+            window.__toastTimer = setTimeout(() => (t.style.display = "none"), 2800);
+        }
+
+        // Modals
         function openModal(modalId) {
             const el = $(modalId);
             if (!el) return;
             el.style.display = "flex";
             document.body.style.overflow = "hidden";
-            // focus first input for accessibility
             const input = el.querySelector("input, select, textarea, button");
             if (input) setTimeout(() => input.focus(), 30);
         }
-
         function closeModal(modalId) {
             const el = $(modalId);
             if (!el) return;
@@ -1266,83 +1391,57 @@
             document.body.style.overflow = "";
         }
 
-        function toast(message) {
-            const t = $("toast");
-            t.textContent = message;
-            t.style.display = "block";
-            clearTimeout(window.__toastTimer);
-            window.__toastTimer = setTimeout(() => {
-                t.style.display = "none";
-            }, 2800);
-        }
-
-        // Year
-        $("year").textContent = new Date().getFullYear();
-
-        // Open buttons
-        const openCustomer = () => openModal("modalCustomer");
-        const openProvider = () => openModal("modalProvider");
-
-        $("openCustomer").addEventListener("click", openCustomer);
-        $("openCustomer2").addEventListener("click", openCustomer);
-        $("ctaFind").addEventListener("click", openCustomer);
-        $("ctaWaitlist").addEventListener("click", openCustomer);
-
-        $("openProvider").addEventListener("click", openProvider);
-        $("openProvider2").addEventListener("click", openProvider);
-        $("openProvider3").addEventListener("click", openProvider);
-        $("ctaProvider").addEventListener("click", openProvider);
-        $("ctaProviderB").addEventListener("click", openProvider);
-
-        // Close modal buttons + click backdrop
         document.querySelectorAll("[data-close]").forEach(btn => {
             btn.addEventListener("click", () => closeModal(btn.getAttribute("data-close")));
         });
-
-        ["modalCustomer", "modalProvider"].forEach(id => {
+        ["modalClient", "modalPro"].forEach(id => {
             const el = $(id);
-            el.addEventListener("click", (e) => {
-                if (e.target === el) closeModal(id);
-            });
+            el.addEventListener("click", (e) => { if (e.target === el) closeModal(id); });
         });
-
-        // Escape key to close
         document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape") {
-                closeModal("modalCustomer");
-                closeModal("modalProvider");
-            }
+            if (e.key === "Escape") { closeModal("modalClient"); closeModal("modalPro"); }
         });
 
-        // Quick search demo
-        $("quickSearch").addEventListener("click", () => {
-            const service = $("serviceSelect").value;
-            const city = $("cityInput").value.trim() || "your city";
-            toast(`Searching for ${service} in ${city} (demo)`);
-            openCustomer();
-            $("cCity").value = $("cityInput").value.trim();
-            $("cService").value = service;
-        });
-
-        // Submit demos (no backend)
-        function isValidEmail(v) {
-            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+        // Tabs
+        function setTab(which) {
+            const isClient = which === "client";
+            $("tabClient").classList.toggle("active", isClient);
+            $("tabPro").classList.toggle("active", !isClient);
+            $("panelClient").style.display = isClient ? "grid" : "none";
+            $("panelPro").style.display = isClient ? "none" : "grid";
         }
+        $("tabClient").addEventListener("click", () => setTab("client"));
+        $("tabPro").addEventListener("click", () => setTab("pro"));
 
-        $("submitCustomer").addEventListener("click", () => {
+        // CTAs
+        const openClient = () => openModal("modalClient");
+        const openPro = () => openModal("modalPro");
+
+        $("openClient").addEventListener("click", openClient);
+        $("openClient2").addEventListener("click", openClient);
+        $("ctaClient").addEventListener("click", openClient);
+        $("ctaWaitlist").addEventListener("click", openClient);
+
+        $("openPro").addEventListener("click", openPro);
+        $("openPro2").addEventListener("click", openPro);
+        $("ctaPro").addEventListener("click", openPro);
+        $("ctaApplyPro").addEventListener("click", openPro);
+
+        // Validation (demo)
+        function isValidEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+        $("submitClient").addEventListener("click", () => {
             const name = $("cName").value.trim();
             const email = $("cEmail").value.trim();
             if (!name || !isValidEmail(email)) {
                 toast("Please enter your name and a valid email.");
                 return;
             }
-            closeModal("modalCustomer");
+            closeModal("modalClient");
             toast("✅ You're on the waitlist! (demo)");
-            // Here you'd POST to your backend / API
-            // fetch("/api/waitlist", { method:"POST", headers:{'Content-Type':'application/json'}, body: JSON.stringify({...}) })
         });
 
-        $("submitProvider").addEventListener("click", () => {
+        $("submitPro").addEventListener("click", () => {
             const name = $("pName").value.trim();
             const email = $("pEmail").value.trim();
             const city = $("pCity").value.trim();
@@ -1350,10 +1449,8 @@
                 toast("Please fill name, email, and city.");
                 return;
             }
-            closeModal("modalProvider");
+            closeModal("modalPro");
             toast("✅ Application submitted! (demo)");
-            // Here you'd POST to your backend / API
-            // fetch("/api/providers/apply", { method:"POST", headers:{'Content-Type':'application/json'}, body: JSON.stringify({...}) })
         });
     </script>
 </body>
